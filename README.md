@@ -1,30 +1,51 @@
 # ClockApi_SpringRest-SpringSecurity
 
-3 in 1 Project: Rest Api, Rest Client & Authorization Server
+🚀 3-in-1 Project: REST API, REST Client & Authorization Server
+🧩 What's Inside
+This project combines three key modules into one:
 
-New Topics covered:-
+✅ REST API – Build and expose endpoints
 
-Spring Web:
-Annotations: @RestController, @ResponseBody, @RequestBody
-ResponseEntity<T> return type.
-GlobalExceptionHandler
-@RestControllerAdvice
-Swagger Documentation
+✅ REST Client – Consume APIs using WebClient
+
+✅ Authorization Server – Secure APIs with OAuth 2.0 & JWT
+
+📚 Topics Covered
+🌐 Spring Web
+@RestController, @ResponseBody, @RequestBody
+
+ResponseEntity return types
+
+@RestControllerAdvice for global exception handling
+
+Swagger/OpenAPI documentation
+
 CORS configuration
 
-Spring Reactive Web:
-WebClient (sending async/sync requests)
+🔄 Spring Reactive Web
+WebClient (for async/sync REST calls)
 
-Spring Security:
-SecurityFilterChain
+🔐 Spring Security
+SecurityFilterChain configuration
+
 Basic Authentication
-OAuth 2.0 Authentication (with Google OAuth 2.0 & Custom OAuth 2.0 Authorization Server)
-Authentication & Authorization
-Authorization Server & Resource Server
+
+OAuth 2.0 Authentication
+
+Google OAuth 2.0 login
+
+Custom OAuth 2.0 Authorization Server
+
+JWT-based Authentication & Authorization
+
 Session Management
-JWT
+
+Authorization Server + Resource Server setup
+
+🚫 Not Covered
+RestTemplate (legacy, replaced by WebClient)
+
+HATEOAS features
 
 
-Not Covered:
-RestTemplate
 HATEOAS feature
