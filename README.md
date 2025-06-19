@@ -8,6 +8,17 @@
 
 ---
 
+> ⚠️ **Important:**  
+> Before running the application, make sure to configure your **Google OAuth 2.0 Client ID and Client Secret**  
+> in your `application.properties` file:
+>
+> ```properties
+> spring.security.oauth2.client.registration.google.client-id=YOUR_GOOGLE_CLIENT_ID
+> spring.security.oauth2.client.registration.google.client-secret=YOUR_GOOGLE_CLIENT_SECRET
+> ```
+
+---
+
 ### 🧩 What's Inside
 
 This project combines three key modules into one:
