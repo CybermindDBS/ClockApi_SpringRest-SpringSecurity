@@ -53,5 +53,3 @@ This project combines three key modules into one:
 - **JWT-based Authentication & Authorization**
 - **Session Management**
 - **Authorization Server + Resource Server** setup
-
----
