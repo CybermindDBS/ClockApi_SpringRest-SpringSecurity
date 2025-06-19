@@ -43,5 +43,5 @@ This project combines three key modules into one:
 ---
 
 ### 🚫 Not Covered
-- `RestTemplate` (use WebClient instead)
+- `RestTemplate` (used WebClient instead)
 - **HATEOAS** features
