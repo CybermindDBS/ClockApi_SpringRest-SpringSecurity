@@ -1,0 +1,382 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
+body {
+    display: flex;
+    height: 100vh;
+    min-height: fit-content;
+    min-width: 1100px;
+    flex-direction: column;
+    margin: 0;
+    user-select: none;
+}
+
+.site-name-div {
+    display: flex;
+    gap: 10px;
+}
+
+.site-name {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+    font-style: normal;
+    margin: 0;
+}
+
+.top-bar {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 120px;
+    background-color: whitesmoke;
+    padding: 0 25px 0 25px;
+}
+
+.top-bar .site-name {
+    align-self: center;
+}
+
+.top-bar .right-pane {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+.controls-section {
+    position: sticky;
+    bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.controls-panel {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    width: fit-content;
+    gap: 30px;
+    padding: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
+    z-index: 1;
+    background: white;
+    border-radius: 30px;
+    border: 1px grey dashed;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 5px grey;
+}
+
+.control {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.expandable {
+    width: 100%;
+}
+
+.vertical-hr {
+    height: 100%;
+    margin: 0;
+    border: 1px solid;
+    border-color: rgba(7, 0, 0, 0.178);
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    box-sizing: border-box;
+    padding: 90px 0 60px 0;
+}
+
+.datetime-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+.timezone-main {
+    font-family: "Roboto Mono", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 200;
+    font-style: normal;
+    margin: 0;
+}
+
+.date-main {
+    font-family: "Roboto Mono", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 200;
+    font-style: normal;
+    margin: 0;
+}
+
+.time-main {
+    font-family: "Anton", sans-serif;
+    font-size: 4rem;
+    font-weight: 400;
+    font-style: italic;
+    margin: 0;
+    margin-top: 10px;
+}
+
+.controls-section button {
+    height: 90px;
+    width: 90px;
+    border: 0 solid;
+    border-radius: 360px;
+    padding: 10px;
+    background: rgb(0, 0, 0);
+    color: white;
+    box-shadow: 1px 1px 5px black;
+    text-transform: uppercase;
+
+    font-family: "Roboto Mono", sans-serif;
+    font-size: 0.8rem;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.controls-section button:hover {
+    background: rgba(0, 162, 255, 0.575);
+    border: 1px dotted;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px rgba(0, 162, 255, 0.575);
+}
+
+.controls-section form input {
+    border: 0 solid;
+    border-radius: 5px;
+    padding: 10px;
+
+    font-family: "Roboto Mono", sans-serif;
+    font-size: 0.8rem;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.controls-section form input[type="text"] {
+    width: 300px;
+}
+
+.controls-section form input[type="submit"] {
+    margin-top: 3px;
+    background: rgb(0, 0, 0);
+    color: white;
+    box-shadow: 1px 1px 5px black;
+    text-transform: uppercase;
+}
+
+.controls-section form input[type="submit"]:hover {
+    background: rgba(0, 162, 255, 0.575);
+    border: 1px dotted;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px rgba(0, 162, 255, 0.575);
+}
+
+.subscribed-timezones {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 75%;
+    gap: 15px;
+    box-sizing: border-box;
+    margin-top: 70px;
+}
+
+.timezone-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 300px;
+    background-color: whitesmoke;
+}
+
+.timezone-block:hover {
+    background-color: whitesmoke;
+    box-shadow: 1px 1px 10px black;
+    animation: bigger 0.2s forwards;
+}
+
+@keyframes bigger {
+    from {
+        height: 150px;
+        width: 300px;
+    }
+    to {
+        height: 150px;
+        width: 310px;
+    }
+}
+
+.timezone-sub {
+    font-family: "Roboto Mono", sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    font-style: normal;
+    margin: 0;
+    margin-top: 10px;
+}
+
+.date-sub {
+    font-family: "Roboto Mono", sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    font-style: normal;
+    margin: 0;
+}
+
+.time-sub {
+    font-family: "Anton", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-style: italic;
+    margin: 0;
+}
+
+.btn-logout {
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+
+    font-family: "Roboto Mono", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-style: normal;
+    margin: 0;
+}
+
+.btn-logout:hover {
+    border: 2px solid rgba(0, 162, 255, 0);
+    color: white;
+    background: rgba(0, 162, 255, 0.575);
+    cursor: pointer;
+}
+
+.signed-in-as-text {
+    font-family: "Roboto Mono", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-style: normal;
+    margin: 0;
+    margin-right: 7px;
+}
+
+hr {
+    width: 100%;
+}
+
+.login-card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    height: fit-content;
+    width: 450px;
+    background: white;
+    border-radius: 30px;
+    box-shadow: 1px 1px 15px grey;
+    box-sizing: border-box;
+    padding: 45px 20px 35px 20px;
+}
+
+.login-card form {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.login-card-top-field {
+    display: flex;
+    flex-direction: column;
+    margin: 0 30px;
+    box-sizing: border-box;
+    margin-top: 30px;
+}
+
+.login-card-bottom-fields {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 30px;
+    box-sizing: border-box;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 25px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.login-card-msg {
+    font-family: "Roboto Mono", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 900;
+    font-style: normal;
+    margin: 0;
+    border-radius: 10px;
+    color: red;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.login-card input[type="text"], .login-card input[type="password"] {
+    height: 40px;
+    border: 1px dashed;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 0 10px;
+    font-family: "Roboto Mono", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+}
+
+.login-card label {
+    font-family: "Roboto Mono", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.login-card input[type="submit"], .login-card .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 45px;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-family: "Roboto Mono", sans-serif;
+    font-size: 0.9rem;
+    margin: 0;
+    cursor: pointer;
+    color: white;
+    background: rgb(0, 0, 0, 0.8);
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.login-card input[type="submit"]:hover, .login-card .btn:hover {
+    background: rgba(0, 162, 255, 0.575);
+    color: white;
+    border: 2px solid rgba(0, 162, 255, 0.575);
+}
+
+
+.border {
+    border: 2px solid;
+}

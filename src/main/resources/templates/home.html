@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="1" http-equiv="refresh" th:if="${autoRefresh}">
+    <title>My Clock</title>
+    <link href="../static/css/styles.css" rel="stylesheet"/>
+    <link rel="stylesheet" th:href="@{/css/styles.css}"/>
+</head>
+
+<body>
+<div class="top-bar">
+    <div class="site-name-div">
+        <h2 class="site-name">RestClient | My Clock</h2>
+    </div>
+    <div class="right-pane">
+        <h4 class="signed-in-as-text" th:text="'Signed in as ' + ${username} + '.'">Signed in as User.</h4>
+        <form method="post" th:action="@{/webapp/logout}">
+            <input class="btn-logout" type="submit" value="Logout">
+            <input th:name="${_csrf.parameterName}" th:value="${_csrf.token}" type="hidden"/>
+        </form>
+    </div>
+</div>
+
+<div class="main">
+    <div class="datetime-div">
+        <h3 class="timezone-main" th:text="${datetime.getTimeZone().getTimeZoneId()}">Asia/Kolkata</h3>
+        <h2 class="date-main" th:text="${datetime.getDateAsString()}">01-01-25</h2>
+        <h1 class="time-main" th:text="${datetime.getTimeAsString()}">9:00:00 am</h1>
+    </div>
+    <div class="subscribed-timezones">
+        <div class="timezone-block" th:each="timezoneData : ${subscribedTimezonesData}">
+            <h1 class="time-sub" th:text="${timezoneData.getTimeAsString()}">9:00:00 am</h1>
+            <h3 class="timezone-sub" th:text="${timezoneData.getTimeZone().getTimeZoneId()}">Asia/Kolkata</h3>
+            <h2 class="date-sub" th:text="${timezoneData.getDateAsString()}">01-01-25</h2>
+        </div>
+    </div>
+</div>
+
+<div class="controls-section">
+    <div class="controls-panel">
+        <form method="post" th:action="@{/webapp/set-datetime}" th:object="${datetime}">
+            <div class="control">
+                <div>
+                    <input th:field="*{localDateTime}" type="datetime-local">
+                    <input placeholder="Timezone" th:field="*{timeZone.timeZoneId}" type="text"/>
+                </div>
+            </div>
+            <div>
+                <input class="expandable" type="submit" value="Set Date&Time">
+            </div>
+
+        </form>
+        <form method="post" th:action="@{/webapp/set-subscribed-timezones}" th:object="${subscribedTimezonesDTO}">
+            <div class="control">
+                <input placeholder="eg. Asia/Kolkata, America/Los_Angeles" required
+                       th:field="*{subscribedTimezonesList}" type="text"/>
+            </div>
+            <input class="expandable" type="submit" value="Subscribe Timezones">
+        </form>
+
+        <button id="autoRefreshToggle">Toggle Auto Refresh</button>
+    </div>
+</div>
+
+
+<script>
+    document.getElementById('autoRefreshToggle').addEventListener('click', function () {
+        const url = new URL(window.location.href);
+        const current = url.searchParams.get('autoRefresh') === 'true';
+        url.searchParams.set('autoRefresh', !current);
+        window.location.href = url.toString();
+    });
+</script>
+
+</body>
+
+</html>

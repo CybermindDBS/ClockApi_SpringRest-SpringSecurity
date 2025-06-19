@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${heading}">Login - My Clock</title>
+    <link href="../static/css/styles.css" rel="stylesheet"/>
+    <link rel="stylesheet" th:href="@{/css/styles.css}"/>
+</head>
+
+<body>
+<div class="top-bar">
+    <div class="site-name-div">
+        <h2 class="site-name" th:text="${heading}">RestClient | My Clock</h2>
+    </div>
+</div>
+<div class="login-card">
+    <form method="post" th:action="@{${formPostUrl}}">
+        <div class="login-card-top-field" th:if="${param.error}">
+            <h2 class="login-card-msg" th:text="${errorMessage}">Something went wrong</h2>
+        </div>
+        <div class="login-card-top-field">
+            <label for="username">Username</label>
+            <input id="username" name="username" type="text" th:placeholder="${showGoogleOauth2Login} ? 'user1' : 'user4'"/>
+        </div>
+        <div class="login-card-top-field">
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" placeholder="pass123"/>
+        </div>
+        <div class="login-card-bottom-fields">
+            <input type="submit" value="Login">
+            <hr th:if="${showGoogleOauth2Login}">
+            <a class="btn" th:href="@{/oauth2/authorization/google}" th:if="${showGoogleOauth2Login}">Login with Google</a>
+            <a class="btn" th:href="@{/oauth2/authorization/my-auth}" th:if="${showGoogleOauth2Login}">Login with MyAuth</a>
+        </div>
+        <input th:if="${_csrf != null}" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" type="hidden"/>
+    </form>
+</div>
+</body>
+</html>
