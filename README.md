@@ -41,7 +41,3 @@ This project combines three key modules into one:
 - **Authorization Server + Resource Server** setup
 
 ---
-
-### 🚫 Not Covered
-- `RestTemplate` (used WebClient instead)
-- **HATEOAS** features
