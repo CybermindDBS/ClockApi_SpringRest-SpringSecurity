@@ -2,6 +2,12 @@
 
 ## 🚀 3-in-1 Project: REST API, REST Client & Authorization Server
 
+### 🔗 Useful Endpoints
+- 🔍 **Swagger Documentation**: [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)  
+- 🔄 **REST Client Interface**: [http://localhost:8080/webapp](http://localhost:8080/webapp)  
+
+---
+
 ### 🧩 What's Inside
 
 This project combines three key modules into one:
@@ -37,6 +43,5 @@ This project combines three key modules into one:
 ---
 
 ### 🚫 Not Covered
-- `RestTemplate` (used WebClient instead)
+- `RestTemplate` (use WebClient instead)
 - **HATEOAS** features
-
